@@ -28,5 +28,28 @@ const defaultOptions = {
 };
 
 let barOptions = {
-    
-}
+  ...defaultOptions,
+  chart: {
+    ...defaultOptions.chart,
+    type: 'area',
+  },
+  tooltip: {
+    enabled: true,
+    style: {
+      fontFamily: fontFamily,
+    },
+    y: {
+      formatter: (value) => `${value}K`,
+    },
+  },
+  series: [
+    {
+      name: 'Views',
+      data: [15, 50, 18, 90, 30, 65],
+    },
+  ],
+};
+
+let chart = new ApexCharts(document.querySelector('.area-chart'), barOptions);
+
+chart.render();
