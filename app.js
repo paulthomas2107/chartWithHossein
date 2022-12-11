@@ -48,6 +48,64 @@ let barOptions = {
       data: [15, 50, 18, 90, 30, 65],
     },
   ],
+  colors: [colorPrimary],
+  fill: {
+    type: 'gradient',
+    gradient: {
+      type: 'vertical',
+      opacityFrom: 1,
+      opacityTo: 0,
+      stops: [0, 100],
+      colorStops: [
+        {
+          offset: 0,
+          opacity: 0.2,
+          color: '#ffffff',
+        },
+        {
+          offset: 100,
+          opacity: 0,
+          color: '#ffffff',
+        },
+      ],
+    },
+  },
+  stroke: {
+    color: [colorPrimary],
+    lineCap: 'round',
+  },
+  grid: {
+    borderColor: 'rgba(0, 0, 0, 0)',
+    padding: {
+      top: -30,
+      right: 0,
+      bottom: -8,
+      left: 12,
+    },
+  },
+  markers: {
+    strokeColors: colorPrimary,
+  },
+  yaxis: {
+    show: false,
+  },
+  xaxis: {
+    labels: {
+      show: true,
+      floating: true,
+      style: {
+        colors: colorLabel,
+        fontFamily: fontFamily,
+      },
+    },
+    axisBorder: {
+      show: false,
+    },
+    crosshairs: {
+      show: false,
+    },
+    categories: ['Jan', 'Mar', 'May', 'Jul', 'Sep', 'Nov'],
+  },
 };
 
 let chart = new ApexCharts(document.querySelector('.area-chart'), barOptions);
